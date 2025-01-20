@@ -75,3 +75,38 @@ This phase provided a foundation for:
 ---
 
 This phased approach ensures steady progression while cementing critical full-stack development concepts and best practices. Future milestones include expanding functionalities like product management, order processing, and optimizing the user experience.
+---
+## Milestone 6: Backend Endpoint for Secure Signup 
+
+### Objectives
+This milestone focuses on establishing a robust backend endpoint to support the Signup page. By the end of this phase, you will:
+- Gain a deep understanding of password encryption before storage.
+- Learn how to securely save comprehensive user data in the database.
+
+### Key Features
+1. **Password Encryption**:  
+   - Utilize `bcrypt` to hash passwords during signup.  
+   - Prevent storing plain-text passwords in the database.  
+
+2. **User Data Management**:  
+   - Store user details such as name, email, and encrypted passwords securely.  
+   - Ensure the database structure supports both scalability and security.  
+
+### Benefits of Encrypting Passwords
+- **Protect User Data**: Safeguards passwords in case of data breaches.  
+- **Enhance Privacy**: Prevents passwords from being visible to unauthorized individuals.  
+- **Regulatory Compliance**: Adheres to security standards like GDPR and PCI-DSS.  
+- **Mitigate Password Theft**: Makes it significantly harder for attackers to compromise accounts.
+
+### Steps for Implementation  
+Here’s how we’ll implement this in the live coding session:
+
+1. **Encrypt Passwords**:  
+   - Leverage `bcrypt` to generate a hash from the user’s password.  
+   - Store the hashed password instead of raw text in the database for added security.  
+
+2. **Database Integration**:  
+   - Design a schema to save all necessary user information, including encrypted passwords, efficiently.  
+   - Validate inputs to prevent unauthorized or malicious data entry.  
+
+This milestone empowers the application to store user data safely and securely, forming a strong foundation for reliable user authentication and privacy compliance.
