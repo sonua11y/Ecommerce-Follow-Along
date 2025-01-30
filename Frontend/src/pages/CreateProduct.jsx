@@ -1,10 +1,12 @@
-import {useState,useEffect} from 'react'
-import {AiOutlinePlusCircle} from "react-icons/ai";
+import React, { useState, useEffect } from "react";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+import axios from "axios";
+
 
 const CreateProduct = () => {
     const [image, setImage] = useState([]);
     const [previewImages, setPreviewImages] = useState([]);
-    const [name, setName] = useState('');
+    const [name, setName] = useState('');   
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [tags,setTags] = useState('');
@@ -26,43 +28,43 @@ const CreateProduct = () => {
         setPreviewImages((prevPreviews)=>prevPreviews.concat(imagePreviews));
     }
 
-    useEffect(() => {
-        return ()=>{
-            previewImages.forEach((e)=>URL.revokeObjectURL(e))
 
-        }
-    }, [previewImages])
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const productData = {
-            name: name,
-            description: description,
-            category: category,
-            tags: tags,
-            price: price,
-            stock: stock,
-            email: email,
-            image: image,
-        }
-        console.log("Product data", productData);
-        alert("Product created successfully")
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-        setImage([])
-        setPreviewImages([])
-        setName('')
-        setDescription('')
-        setCategory('')
-        setTags('')
-        setPrice('')
-        setStock('')
-        setEmail('')
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("description", description);
+        formData.append("email", email);
+        formData.append("price", price);
+        formData.append("tags", tags);
+        formData.append("category", category);
+        formData.append("stock", stock);
+        
+        image.forEach((image) => {
+            formData.append("images", image);
+        });
+    
 
-    }
+        const config = {
+        headers: {
+            "Content-type": "multipart/form-data",
+            "Accept": "any",
+        },
+        };
+
+        axios.post("http://localhost:8000/api/v2/product/create-product", formData, config).then((res) => {
+            console.log("Response: ", res.data);
+        }).catch((err) => {
+            console.log("Error: ", err);
+        });
+        
+
+    };
 
     return (
-        <div
-      className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-12 
+        <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-12 
                 flex flex-col justify-center items-center sm:px-6 lg:px-8">
             <div className="w-[90%] max-w-[600px] bd-white shadow h-auto rounded-[4px] p-4 mx-auto  ">
                 <h5 className="mt-6-text-center text-3xl font-bold text-gray-900">Create Product</h5>
@@ -113,13 +115,14 @@ const CreateProduct = () => {
                             value={category}
                             className="w-full p-2 border rounded"
                             onChange={(e) => setCategory(e.target.value)}
-                            required>
+                            required
+                            >
                             <option className="block text-s font-medium text-gray-200">Choose a Category</option>
-                            {categoriesData.map((category) => {
+                            {categoriesData.map((category) => (
                                 <option value={category.title} key={category.title}>
                                     {category.title}
                                 </option>
-                            })}
+                            ))}
                         </select>
                     </div>
 
@@ -187,7 +190,7 @@ const CreateProduct = () => {
 
                     <button
                         type="submit"
-                        className="flex items-center justify-center p-2 bg-pink-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-pink-600 transition w-fit mx-auto"> Create </button>
+                        className="flex items-center justify-center p-2 bg-pink-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-pink-600 transition w-fit mx-auto"> Create form </button>
                 </form>
             </div>
         </div>

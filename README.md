@@ -83,7 +83,6 @@ This milestone focuses on establishing a robust backend endpoint to support the 
 - Gain a deep understanding of password encryption before storage.
 - Learn how to securely save comprehensive user data in the database.
 
-<<<<<<< HEAD
 ---
 
 Here’s a clear and engaging description for your README file:
@@ -245,9 +244,12 @@ Here’s how we’ll implement this in the live coding session:
 This milestone empowers the application to store user data safely and securely, forming a strong foundation for reliable user authentication and privacy compliance.
 
 
+<<<<<<< HEAD
 Here's a sample update for your README file that aligns with the details of Milestone 9:
 
 ---
+=======
+>>>>>>> 33265c5 (Milestone-10 successfully completed)
 
 # Milestone 9: Product Input Form 📋
 
@@ -276,4 +278,46 @@ This lesson emphasized the foundation of creating and submitting product data. F
 - **Frontend**: HTML, CSS, JavaScript
 - **Additional Features**: File input handling for multiple images.
 
+
+
+
+## Milestone 10: Product Schema and Endpoint Creation
+
+### Overview
+In this milestone, we focused on defining a Mongoose schema for products and creating an API endpoint to store product details in MongoDB. This involved structuring the product data, implementing validation, and ensuring data integrity.
+
+### Learning Outcomes
+- Defined a **Mongoose schema** for product data, including fields like:
+  - `name` (String, required)
+  - `description` (String, optional)
+  - `price` (Number, required, validation for positive values)
+  - `imageUrl` (String, optional, validated as a URL format)
+- Implemented validation to ensure only valid data is stored in MongoDB.
+- Created a **POST endpoint** to handle product creation requests.
+- Integrated Mongoose to connect with MongoDB and store validated product data.
+- Explored additional functionalities like role-based access control (e.g., allowing only admins or shop owners to add products).
+
+### Implementation Details
+1. **Mongoose Schema Creation**
+   - Defined a schema using Mongoose.
+   - Added field-level validation.
+   - Created a model to interact with MongoDB.
+
+2. **API Endpoint Development**
+   - Built a POST endpoint (`/api/products`) to handle product data submission.
+   - Implemented request validation before storing data in the database.
+   - Used `express-validator` for additional validation checks.
+
+3. **Error Handling & Data Integrity**
+   - Handled errors for invalid data submissions.
+   - Ensured only properly formatted data is stored.
+
+### Next Steps
+- Implement role-based access control (RBAC) to allow only authorized users to upload products.
+- Extend the schema to include categories, stock status, and user-specific product listings.
+
+### Submission Details
+- The code has been pushed to the GitHub repository.
+- The repository is publicly accessible.
+- This README update summarizes the progress for **Milestone 10**.
 

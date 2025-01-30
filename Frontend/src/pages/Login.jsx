@@ -98,7 +98,7 @@ function Login() {
                       id="rememberMe"
                       className="mr-2"
                   />
-                  <label htmlFor="rememberMe" className="text-sm text-gray-900">
+                  <label htmlFor="remember Me" className="text-sm text-gray-900">
                     Remember me
                   </label>
                 </div>
