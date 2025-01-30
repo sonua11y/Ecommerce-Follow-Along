@@ -279,8 +279,7 @@ This lesson emphasized the foundation of creating and submitting product data. F
 - **Additional Features**: File input handling for multiple images.
 
 
-<<<<<<< HEAD
-=======
+
 
 ## Milestone 10: Product Schema and Endpoint Creation
 
