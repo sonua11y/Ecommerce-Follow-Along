@@ -1,7 +1,22 @@
 const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+
+const uploadsDir = path.join(__dirname, 'uploads');
+const productsDir = path.join(__dirname, 'products');
+
+[uploadsDir, productsDir].forEach(dir => {
+    if(!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {recursive: true});
+        console.log(`Created directory: ${dir}`);
+    }
+});
+
 
 const storage=multer.diskStorage({
-    destination : '../uploads',
+    destination : function (req, file, cb) {
+        cb(null, uploadsDir);
+    },
 
     filename: function(req,file,cb){
         console.log(req.body);
@@ -12,7 +27,9 @@ const storage=multer.diskStorage({
     });
 
     const pstorage=multer.diskStorage({
-        destination : '../products',
+        destination : function (req, file, cb) {
+            cb(null,productsDir);
+        },
     
         filename: function(req,file,cb){
             console.log(req.body);
@@ -22,6 +39,11 @@ const storage=multer.diskStorage({
         },
         });
 
-    exports.upload=multer({storage: storage});
+    const upload=multer({storage: storage});
     
-    exports.pupload=multer({storage: pstorage});
+     const pupload=multer({storage: pstorage});
+
+    module.exports = {
+        upload,
+        pupload,
+    };

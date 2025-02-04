@@ -106,7 +106,6 @@ function Login() {
           </div>
 
 
-          {/* Sign In Button */}
           <button
               type="submit"
               className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
