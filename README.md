@@ -321,3 +321,42 @@ In this milestone, we focused on defining a Mongoose schema for products and cre
 - The repository is publicly accessible.
 - This README update summarizes the progress for **Milestone 10**.
 
+
+Milestone 11: Dynamic Home Page with Product Data
+
+Overview
+
+In this milestone, we implemented a dynamic home page that displays all products stored in MongoDB. This was achieved by writing a backend endpoint to fetch product data and rendering it dynamically on the frontend using a product card component.
+
+Learning Outcomes
+
+Created an API endpoint to extract and send product data from MongoDB.
+
+Implemented a function on the frontend to fetch the product data.
+
+Dynamically displayed the product data using a reusable product card component.
+
+Implementation Steps
+
+Backend:
+
+Developed an API endpoint that retrieves all product data from MongoDB.
+
+Ensured data is formatted and sent as a JSON response.
+
+Frontend:
+
+Created a function to fetch product data from the backend.
+
+Passed the received data to the product card component for dynamic rendering.
+
+Integrated the product listing into the home page.
+
+
+Submission:
+
+Code has been pushed to the GitHub repository.
+
+The repository is publicly accessible.
+
+This README file summarizes the progress for Milestone 11.
