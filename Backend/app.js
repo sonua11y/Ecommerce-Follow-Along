@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const errorHandler = require("./middleware/error");
 const product = require("./controller/product");
+const path = require('path');
 app.use(errorHandler);
 
 // Built-in middleware for parsing JSON
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Use CORS middleware
 app.use(cors());
 
+app.use('/products', express.static(path.join(__dirname, 'products')));
 app.use("/api/v2/user", user);
 app.use("/api/v2/product", product);
 
