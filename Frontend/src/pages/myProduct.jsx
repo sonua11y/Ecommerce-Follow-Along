@@ -1,6 +1,7 @@
 //eslint-disable-next-line
 import React, {useEffect, useState} from "react";
-import Product from "../components/products";
+import Myproduct from "../components/myProduct";
+
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true); //for loading state
@@ -40,7 +41,7 @@ return (
         <h1 className="text-3xl text-center text-white py-6"><strong>Product Gallery</strong></h1>
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
             {products.map((product) => (
-                <Product key={product._id} {...product}/>
+                <Myproduct key={product._id} {...product}/>
             ))}
         </div>
     </div>

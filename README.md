@@ -374,3 +374,47 @@ Dynamic Display: Utilized the existing product card component to dynamically ren
 
 This milestone successfully enhances the application by providing users with a personalized view of their added products.
 
+
+
+Sure! Here’s a suggested update for your README file to reflect the changes and functionalities introduced in Milestone 13:
+
+---
+
+# Project Title
+
+## Milestone 13: Edit Uploaded Products 🌟
+
+### Overview
+In this milestone, we have implemented a new functionality that allows users to edit the details of uploaded products. This includes adding an edit button to the product card, which enables users to update existing product information stored in our MongoDB database.
+
+### Learning Goals 🎯
+By the end of this milestone, you will learn:
+- How to write an endpoint that updates existing data in MongoDB.
+- How to auto-fill a form with previous data and provide an option to edit it.
+
+### Features Added
+- **Edit Button**: Each product card now includes an edit button that, when clicked, will populate a form with the current product details.
+- **Auto-fill Form**: The form will automatically fill with the existing product data, allowing users to make changes easily.
+- **Update Endpoint**: A new backend endpoint has been created to handle the update requests and modify the product details in the MongoDB database.
+
+### Steps for Implementation 📝
+1. **Backend Endpoint**:
+   - Created an endpoint that receives the updated product data.
+   - The endpoint processes the request and updates the corresponding product in the MongoDB database.
+
+2. **Frontend Changes**:
+   - Added an edit button to each product card.
+   - Implemented functionality to open a form pre-filled with the product's current details when the edit button is clicked.
+   - Provided an option to save the changes, which triggers the update endpoint.
+
+### How to Use
+1. Navigate to the product list.
+2. Click on the edit button on the product you wish to update.
+3. Modify the details in the auto-filled form.
+4. Click the save button to update the product information.
+
+### Conclusion
+With this milestone, users can now easily edit their uploaded products, enhancing the overall user experience and functionality of the application.
+
+---
+
