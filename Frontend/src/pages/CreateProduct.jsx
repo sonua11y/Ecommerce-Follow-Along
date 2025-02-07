@@ -91,7 +91,7 @@ const CreateProduct = () => {
                 }
             } else {
                 const response = await axios.post(
-                    "http://localhost:8000/api/v2/product/create-product",
+                    "http://localhost:8000/api/v2/product",
                     formData,
                     {
                         headers: {

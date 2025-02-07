@@ -22,6 +22,21 @@ export default function Myproduct({name, _id, images, description, price}) {
         navigate(`/product/${_id}`);
     }
 
+    const handleDelete = async () => {
+        try{
+            const response=await axios.delete(
+                `http://localhost:8000/api/v2/product/delete-product/${_id}`
+            );
+            if(response.status === 200) {
+                alert("Product deleted successfully!");
+                window.location.reload();
+            }
+        } catch(err) {
+            console.error("error deleting the product: ",err);
+            alert("Failed to delete the product")
+        }
+    }
+
     return (
         <div className="bg-neutral-200 p-4 rounded-lg shadow-md flex flex-col justify-between">
             <div className="w-full">
@@ -40,6 +55,10 @@ export default function Myproduct({name, _id, images, description, price}) {
                 <button className="w-full text-white px-4 py-2 rounded-md bg-neutral-900"
                 onClick={handleEdit} >
                     Edit
+                </button>
+                <button className="w-full text-white px-4 py-2 rounded-md bg-red-500"
+                onClick={handleDelete} >
+                    Delete
                 </button>
             </div>
         </div>

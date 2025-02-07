@@ -418,3 +418,36 @@ With this milestone, users can now easily edit their uploaded products, enhancin
 
 ---
 
+## Milestone 14: Delete Functionality Implementation
+
+### Overview
+In this milestone, we added a delete button to product cards on the frontend and created a backend endpoint to delete products from MongoDB using their ID.
+
+### Learning Outcomes
+- Developed a **DELETE endpoint** to remove products by ID from MongoDB.
+- Integrated the delete functionality into the frontend with a button on each product card.
+- Implemented functionality to send the product ID to the server when the delete button is clicked.
+
+### Implementation Details
+1. **Backend Endpoint Development**
+   - Created a DELETE endpoint (`/api/products/:id`) to handle product deletion requests.
+   - Utilized Mongoose to find and delete products by their ID.
+
+2. **Frontend Integration**
+   - Added a delete button to each product card.
+   - Configured the button to send a DELETE request to the backend with the corresponding product ID.
+
+3. **Error Handling**
+   - Managed errors for invalid or non-existent product IDs.
+   - Ensured smooth user feedback upon successful or failed deletion.
+
+### Next Steps
+- Implement confirmation dialogs before deletion to prevent accidental removals.
+- Add notifications to inform users about the status of deletion.
+- Enhance role-based access control to restrict delete permissions to authorized users.
+
+### Submission Details
+- The code has been pushed to the GitHub repository.
+- The repository is publicly accessible.
+- This README update summarizes the progress for **Milestone 14**.
+
