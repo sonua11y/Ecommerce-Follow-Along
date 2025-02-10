@@ -108,7 +108,7 @@ router.get('/get-products', async (req,res) => {
         }
     })
 
-    router.put('update-product/:id', pupload.array('images',10), async (req,res) => {
+    router.put('/update-product/:id', pupload.array('images',10), async (req,res) => {
         const {id} = req.params;
         const {name, description, category,tags, price, stock, email} = req.body;
 

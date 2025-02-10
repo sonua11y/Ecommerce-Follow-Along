@@ -244,12 +244,6 @@ Here’s how we’ll implement this in the live coding session:
 This milestone empowers the application to store user data safely and securely, forming a strong foundation for reliable user authentication and privacy compliance.
 
 
-<<<<<<< HEAD
-Here's a sample update for your README file that aligns with the details of Milestone 9:
-
----
-=======
->>>>>>> 33265c5 (Milestone-10 successfully completed)
 
 # Milestone 9: Product Input Form 📋
 
