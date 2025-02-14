@@ -4,7 +4,7 @@ import React from 'react';
 import {BrowserRouter , Routes, Route} from 'react-router-dom';
 import {SignupPage} from './Routes/routes.js';
 import {Home, LoginPage} from "./Routes/routes.js";
-import {CreateProduct,MyProducts} from "./Routes/routes.js";
+import {CreateProduct,MyProducts,Cart} from "./Routes/routes.js";
 
 const App=()=> {
   return (
@@ -16,6 +16,7 @@ const App=()=> {
       <Route path='/product' element={<CreateProduct/>}/>
       <Route path='/product/:id' element={<CreateProduct/>}/>
       <Route path='/myproducts' element={<MyProducts/>}/>
+      <Route path='/cart' element={<Cart/>}/>
     </Routes>
     </BrowserRouter>
   )
