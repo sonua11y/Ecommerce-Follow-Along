@@ -445,3 +445,17 @@ In this milestone, we added a delete button to product cards on the frontend and
 - The repository is publicly accessible.
 - This README update summarizes the progress for **Milestone 14**.
 
+### Milestone 15: Navbar Component 🚀  
+
+In this milestone, we created a **Navbar** component and integrated it into all pages for smooth navigation.  
+
+#### **Key Learning Outcomes**  
+- Creating a reusable **Nav** component.  
+- Implementing navigation across multiple pages:  
+  - Home  
+  - My Products  
+  - Add Product  
+  - Cart  
+- Making the Navbar **responsive** for all screen sizes.  
+
+This milestone enhances user experience by ensuring seamless navigation across the application. 🎯
