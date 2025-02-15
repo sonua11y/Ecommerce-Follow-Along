@@ -459,3 +459,15 @@ In this milestone, we created a **Navbar** component and integrated it into all 
 - Making the Navbar **responsive** for all screen sizes.  
 
 This milestone enhances user experience by ensuring seamless navigation across the application. 🎯
+
+
+Here's a concise summary for your README update:  
+
+**Milestone 16: Product Info Page**  
+
+In this milestone, we create a product information page that displays detailed product data. Users can select the desired quantity and add the product to their cart.  
+
+### **Learning Goals**  
+- Create a new page to display individual product details.  
+- Implement a quantity selector.  
+- Add an "Add to Cart" button for purchasing.

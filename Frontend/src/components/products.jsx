@@ -2,9 +2,12 @@
 
 import React, {useState, useEffect} from "react";
 import Proptypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-export default function Product({name, images, description, price}) {
+export default function Product({_id, name, images, description, price}) {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
+
     useEffect(() => {
         if(!images || images.length === 0) return;
         const interval = setInterval (() => {
@@ -30,7 +33,8 @@ export default function Product({name, images, description, price}) {
 
             <div className="w-full">
                 <p className="text-lg font-bold my-2">${price.toFixed(2)}</p>
-                <button className="w-full text-white px-4 py-2 rounded-md bg-neutral-900">
+                <button className="w-full text-white px-4 py-2 rounded-md bg-neutral-900"
+                    onClick = { () => navigate(`/product/${id}`)}>
                     More info
                 </button>
             </div>
@@ -39,8 +43,9 @@ export default function Product({name, images, description, price}) {
 }
 
 Product.Proptypes = {
+    _id: Prototypes.string.isRequired,
     name: Proptypes.string.isRequired,
     image: Proptypes.arrayOf(Proptypes.string).isRequired,
     description: Proptypes.string.isRequired,
-    price: Proptypes.number.isRequired,
+    price: Proptypes.number,
 }
