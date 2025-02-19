@@ -471,3 +471,29 @@ In this milestone, we create a product information page that displays detailed p
 - Create a new page to display individual product details.  
 - Implement a quantity selector.  
 - Add an "Add to Cart" button for purchasing.
+
+
+Here’s a concise summary for your README update:  
+
+---
+
+### Milestone 17: Add to Cart Functionality 🛒  
+
+In this milestone, we implemented the backend logic to add products to the cart and store them in the database.  
+
+#### Key Updates:  
+- **Updated User Schema** to store cart products.  
+- **Created a Cart Schema** to manage cart items.  
+- **Developed an API Endpoint** to receive product details and save them to the cart.  
+
+This milestone helps in understanding cart functionality and database integration for e-commerce applications.  
+
+---
+
+Milestone 18: Fetch Cart Items 🛒
+In this milestone, we implemented the backend logic to retrieve products from the user's cart for display on the cart page.
+
+Key Updates:
+Created an API Endpoint to handle requests from the cart page.
+Fetched Cart Products using the user's email to display their cart items.
+This milestone enhances the cart functionality by enabling users to view their selected products.

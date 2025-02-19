@@ -9,6 +9,8 @@ const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { default: mongoose } = require("mongoose");
+const { type } = require("os");
 require("dotenv").config();
 
 // create user
@@ -47,7 +49,7 @@ router.post("/create-user", upload.single("file"), catchAsyncErrors( async (req,
             url: fileUrl ,
         },
     });
-
+    
 console.log(user)
 res.status(201).json({ success : true , user });
 }));
@@ -87,6 +89,7 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
         },
         });
 }))
+
 
 
 module.exports = router;
