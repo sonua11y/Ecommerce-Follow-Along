@@ -85,13 +85,6 @@ This milestone focuses on establishing a robust backend endpoint to support the 
 
 ---
 
-Here’s a clear and engaging description for your README file:
-
----
-
-Here’s a README description for Milestone 7:
-
----
 
 # Milestone 7: Backend User Login Endpoint with Password Validation 🔐
 
@@ -497,3 +490,24 @@ Key Updates:
 Created an API Endpoint to handle requests from the cart page.
 Fetched Cart Products using the user's email to display their cart items.
 This milestone enhances the cart functionality by enabling users to view their selected products.
+
+
+
+---
+
+## Milestone 20: Profile Page & User Data Endpoint  
+
+### Overview  
+In this milestone, we implemented a profile page frontend and created a backend endpoint to retrieve user data.  
+
+### Key Features  
+- **Backend Endpoint:** Sends user data via email.  
+- **Profile Page Frontend:** Displays user details including profile photo, name, and email.  
+- **Address Section:**  
+  - Shows user addresses.  
+  - Displays "No address found" if no addresses exist.  
+  - Includes an "Add Address" button for adding new addresses.  
+
+This milestone enhances user profile management by integrating backend data retrieval and frontend rendering. 🚀  
+
+---
