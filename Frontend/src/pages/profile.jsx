@@ -37,8 +37,8 @@ export default function Profile() {
     return (
         <>
         <Nav />
-            <div className="w-full min-h-screen bg-neutral-800 p-5">
-                <div className="w-full h-full bg-neutral-700 rounded-lg">
+            <div className="w-full min-h-screen bg-blue-600 p-5">
+                <div className="w-full h-full bg-yellow-400 rounded-lg">
                     <div className="w-full h-max my-2 p-5">
                         <div className="w-full h-max">
                             <h1 className="text-3xl text-neutral-100">
@@ -99,7 +99,7 @@ export default function Profile() {
                             </h1>
                         </div>
                         <div className="w-full h-max p-5">
-                            <button className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100">
+                            <button className="w-max px-3 py-2 bg-purple-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100">
                                 Add Address
                             </button>
                         </div>

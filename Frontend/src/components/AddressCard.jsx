@@ -9,8 +9,7 @@ export default function AddressCard({
     addressType,
 }) {
     return (
-        <div className="w-full h-max bg-transparent p-5 rounded-lg border border-neutral-600 grid grid-cols-12 gap-5">
-            
+        <div className="w-full h-max bg-transparent p-5 rounded-lg border border-neutral-600 grid grid-cols-12 gap-5"> 
             <div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-2">
                 <div className="w-full h-max bg-neutral-700 rounded-lg flex flex-col gap-y-2 p-3">
                     <div className="text-xl text-neutral-200">Country</div>

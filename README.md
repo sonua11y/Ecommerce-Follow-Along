@@ -494,6 +494,44 @@ This milestone enhances the cart functionality by enabling users to view their s
 
 
 ---
+# **Milestone 19: Cart Functionality**
+
+## Overview
+In this milestone, we implemented the cart functionality by creating a frontend UI for the cart page and developing backend endpoints to manage product quantities within the cart.
+
+## Learning Goals 🎯
+By completing this milestone, we:
+- Created a cart page to display products inside the cart using the endpoint built in Milestone 18.
+- Implemented an option to increase and decrease the quantity of each product using `+` and `-` buttons.
+- Developed backend endpoints to handle quantity adjustments for products in the cart.
+
+## Implementation Details
+
+### Frontend:
+- Created a dedicated **Cart Page** to display all products added to the cart.
+- Implemented dynamic UI components to show product details, prices, and quantity controls.
+- Added `+` and `-` buttons to allow users to adjust the quantity of each product.
+- Integrated API calls to fetch and update cart data dynamically.
+
+### Backend:
+- Created API endpoints to **increase and decrease** the quantity of a product in the cart.
+- Updated the database to reflect changes in product quantities.
+- Implemented validation checks to prevent negative quantities.
+
+
+## How to Test
+1. Navigate to the cart page and verify that products appear correctly.
+2. Use the `+` and `-` buttons to adjust the quantity and observe real-time updates.
+3. Check the API responses to ensure correct updates to the database.
+4. Ensure the UI reflects changes made to the cart without requiring a page refresh.
+
+## Conclusion
+With this milestone, we have successfully implemented a dynamic shopping cart system that allows users to manage product quantities seamlessly. This enhances user experience and lays the foundation for further enhancements like checkout functionality.
+
+---
+🎉 **Milestone 19 Completed!** 🚀
+
+
 
 ## Milestone 20: Profile Page & User Data Endpoint  
 
