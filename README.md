@@ -582,3 +582,30 @@ By completing this milestone, you have:
 This milestone helped in understanding how to create a structured address input form, manage state effectively, and enable seamless navigation within a React application.
 
 
+---
+
+## **Milestone 22: Address Storage Endpoint** ##
+
+## Overview
+In this milestone, we created a backend endpoint that receives the address details from the frontend and stores them inside the user's profile in the database.
+
+## Learning Goals 🎯
+By completing this milestone, you have:
+- Created a backend endpoint to handle address data.
+- Implemented logic to add the address to the address array inside the user collection.
+- Understood how to handle API requests and database updates.
+
+## Features
+- **Endpoint Creation:**
+  - Receives address data from the frontend form.
+  - Validates the address input before storing it.
+- **Database Integration:**
+  - Adds the address to the address array in the user collection.
+  - Ensures the user profile is updated correctly.
+- **Error Handling:**
+  - Returns appropriate responses for success or failure cases.
+
+
+## Conclusion
+This milestone helped in understanding how to create and integrate a backend API that stores user addresses in the database. The knowledge gained will be useful for handling user profiles dynamically in future projects.
+

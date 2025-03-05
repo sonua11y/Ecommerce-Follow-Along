@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Nav from "../components/nav.jsx";
 import { useNavigate } from "react-router-dom";
+import AddressCard from "../components/AddressCard.jsx";
 
 export default function Profile() {
     const [personalDetails, setPersonalDetails] = useState({
@@ -98,7 +99,7 @@ export default function Profile() {
                             </div>
                         </div>
                     </div>
-<div className="w-full h-max my-2 p-5">
+                        <div className="w-full h-max my-2 p-5">
                         <div className="w-full h-max">
                             <h1 className="text-3xl text-neutral-100">
                                 Addresses

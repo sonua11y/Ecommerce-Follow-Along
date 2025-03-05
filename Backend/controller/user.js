@@ -11,6 +11,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { default: mongoose } = require("mongoose");
 const { type } = require("os");
+const { count } = require("console");
 require("dotenv").config();
 
 // create user
@@ -110,6 +111,33 @@ router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
             phone: user.phoneNumber,
             avatarUrl: user.avatar.url
         },
+        addresses: user.addresses,
+    });
+}))
+
+router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
+    const {country, city, address1, address2, zipcode, addressType, email} = req.body;
+
+    const user = await User.findOne({email});
+
+    if(!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    const newAddress = {
+        country,
+        city,
+        address1,
+        address2,
+        zipcode,
+        addressType,
+    };
+
+    user.addresses.push(newAddress);
+    await user.save();
+
+    res.status(201).json({
+        success: true,
         addresses: user.addresses,
     });
 }))
