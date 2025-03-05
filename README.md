@@ -533,7 +533,7 @@ With this milestone, we have successfully implemented a dynamic shopping cart sy
 
 
 
-## Milestone 20: Profile Page & User Data Endpoint  
+## **Milestone 20: Profile Page & User Data Endpoint**  
 
 ### Overview  
 In this milestone, we implemented a profile page frontend and created a backend endpoint to retrieve user data.  
@@ -549,3 +549,36 @@ In this milestone, we implemented a profile page frontend and created a backend 
 This milestone enhances user profile management by integrating backend data retrieval and frontend rendering. 🚀  
 
 ---
+
+## **Milestone 21: Address Input Form** ##
+
+## Overview
+In this milestone, we created a frontend page for address input that allows users to enter and store their address details. The form includes fields for country, city, address lines, zip code, and address type.
+
+## Learning Goals 🎯
+By completing this milestone, you have:
+- Created a frontend form to collect address details.
+- Implemented state management to store the input address.
+- Set up navigation from the profile page to the address form page.
+- Gained a deeper understanding of handling user inputs in forms.
+
+## Features
+- **User Input Fields:**
+  - Country
+  - City
+  - Address Line 1
+  - Address Line 2
+  - Zip Code
+  - Address Type (Home/Work/Other)
+- **State Management:**
+  - The form data is stored in a state to handle user input dynamically.
+- **Navigation:**
+  - Clicking "Add Address" on the profile page navigates to the address form page.
+- **Validation:**
+  - Ensures required fields are filled before submission.
+
+
+## Conclusion
+This milestone helped in understanding how to create a structured address input form, manage state effectively, and enable seamless navigation within a React application.
+
+
