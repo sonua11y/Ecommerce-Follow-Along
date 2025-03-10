@@ -4,7 +4,7 @@ import React from 'react';
 import {BrowserRouter , Routes, Route} from 'react-router-dom';
 import {ProductDetails, SignupPage} from './Routes/routes.js';
 import {Home, LoginPage} from "./Routes/routes.js";
-import {CreateProduct,MyProducts,Cart,Profile, CreateAddress} from "./Routes/routes.js";
+import {CreateProduct,MyProducts,Cart,Profile, CreateAddress, SelectAddress, OrderConfirmation} from "./Routes/routes.js";
 
 const App=()=> {
   return (
@@ -20,6 +20,8 @@ const App=()=> {
       <Route path='/productdetails/:id' element={<ProductDetails/>}/>
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/create-address' element={<CreateAddress/>}/>
+      <Route path='/select-address' element={<SelectAddress/>}/>
+      <Route path='/order-confirmation' element={<OrderConfirmation/>}/>
     </Routes>
     </BrowserRouter>
   )

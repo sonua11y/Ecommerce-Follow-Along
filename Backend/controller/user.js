@@ -142,4 +142,27 @@ router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
     });
 }))
 
+router.get("/addresses", catchAsyncErrors(async(req, res, next) => {
+    console.log("Fetching addresses for:", req.query.email);
+
+    const {email} = req.query;
+    if(!email) {
+        console.log("Email not provided");
+        return next(new ErrorHandler("Please provide an email", 400));
+    }
+
+    const user = await User.findOne({email});
+    if(!user) {
+        console.log("User not found in DB");
+        return next (new ErrorHandler("User not found", 404));
+    }
+
+    console.log("User found:", user);
+    res.status(200).json({
+        success: true,
+        addresses: user.addresses,
+    });
+}));
+
+
 module.exports = router;
