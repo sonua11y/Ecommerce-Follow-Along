@@ -7,6 +7,7 @@ const OrderConfirmation = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const {addressId, email} = location.state || {};
+
     const [selectedAddress, setSelectedAddress] = useState(null);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -14,7 +15,7 @@ const OrderConfirmation = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        if(!addressId || email) {
+        if(!addressId || !email) {
             navigate('/select-address');
         }
 
