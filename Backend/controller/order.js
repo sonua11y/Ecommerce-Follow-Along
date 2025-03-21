@@ -1,5 +1,5 @@
 const express = require('express');
-const router = require.Router();
+const router = express.Router();
 const Order = require('../model/order');
 const User = require('../model/user');
 
@@ -39,10 +39,33 @@ router.post('/place-order', async(req, res) => {
         //clear user's cart after placing the order
         await Cart.deleteMany({user: user._id});
 
-        res.status(201).json({message: 'Orders placed and cart cleared successfully',orders})
+        res.status(201).json({message: 'Orders placed and cart cleared successfully',order})
     }
     catch(error) {
         console.error('Error placing orders:', error);
         res.status(500).json({message: error.message});
     }
 });
+
+router.get('/my-orders', async (req, res) => {
+    try{
+        const {email} = req.query;
+
+        if(!email) {
+            return res.status(400).json({message: 'Email is required'});
+        }
+
+        const user = await User.findOne({email});
+        if(!user) {
+            return res.status(404).json({message: 'User not found'});
+        }
+
+        const orders = await Order.find({user: user._id});
+        res.status(200).json({orders});
+    } catch(error) {
+        console.error('Error fetching the order:', error);
+        res.status(500).json({message: error.message});
+    }
+});
+
+module.exports = router;
