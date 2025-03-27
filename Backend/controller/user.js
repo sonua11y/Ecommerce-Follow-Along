@@ -116,7 +116,9 @@ router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
 }))
 
 router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
-    const {country, city, address1, address2, zipcode, addressType, email} = req.body;
+
+    console.log("Received address data:", req.body);
+    const {country, city, address1, address2, zipCode, addressType, email} = req.body;
 
     const user = await User.findOne({email});
 
@@ -129,7 +131,7 @@ router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
         city,
         address1,
         address2,
-        zipcode,
+        zipCode,
         addressType,
     };
 

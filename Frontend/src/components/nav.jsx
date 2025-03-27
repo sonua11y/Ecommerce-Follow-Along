@@ -115,7 +115,22 @@ const Navbar = () => {
                                     >
                                     Profile
                                 </NavLink>
-                            </li>        
+                            </li>
+
+                            <li>
+                                <NavLink
+                                    to='/myorders'
+                                    end
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'text-white font-semibold px-3 py-2 rounded-md'
+                                            : 'text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm transition-colors duration-200'
+                                    }
+                                    onClick={() => setIsOpen(false)}
+                                    >
+                                    My Orders
+                                </NavLink>
+                            </li>                
 
                         </ul>
                     </div>
@@ -125,6 +140,19 @@ const Navbar = () => {
             {isOpen && (
                 <div className='md:hidden' id='mobile-menu'>
                     <ul className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
+                        <li>
+                            <NavLink
+                                to='/'
+                                end
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'text-white font-semibold px-3 py-2 rounded-md'
+                                        : 'text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm transition-colors duration-200'
+                                }
+                                onClick={() => setIsOpen(false)}> //close the link on clicking menu
+                                Home
+                            </NavLink>
+                        </li>
                         <li>
                             <NavLink
                                 to='/'

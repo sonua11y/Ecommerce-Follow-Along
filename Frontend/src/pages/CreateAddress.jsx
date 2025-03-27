@@ -10,7 +10,7 @@ const CreateAddress = () => {
     const [city, setCity] = useState("");
     const [address1, setAddress1] = useState("");
     const [address2, setAddress2] = useState("");
-    const [zipcode, setZipcode] = useState("");
+    const [zipCode, setZipCode] = useState("");
     const [addressType, setAddressType] = useState("");
 
 
@@ -21,12 +21,13 @@ const CreateAddress = () => {
             city,
             address1,
             address2,
-            zipcode,
+            zipCode,
             addressType,
             email: "dips@gmail.com"
         };
 
 
+        console.log("Submitting address:", addressData);
     try {
         const response = await axios.post(
             "http://localhost:8000/api/v2/user/add-address",
@@ -102,9 +103,9 @@ const CreateAddress = () => {
                         <label className="pb-1 block">Zip Code</label>
                         <input
                             type="number"
-                            value={zipcode}
+                            value={zipCode}
                             className="w-full p-2 border rounded"
-                            onChange={(e) => setZipcode(e.target.value)}
+                            onChange={(e) => setZipCode(e.target.value)}
                             placeholder="Enter zip code"
                             required
                         />
@@ -134,4 +135,4 @@ const CreateAddress = () => {
 };
 
 
-export default CreateAddress
+export default CreateAddress;

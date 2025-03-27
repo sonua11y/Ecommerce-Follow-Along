@@ -2,16 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 
-
-
-
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [visible, setVisible] = useState(false);
-
-
 
 
     const handleClickLogin = async (event) => {

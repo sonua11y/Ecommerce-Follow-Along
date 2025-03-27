@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import Proptypes from "prop-types";
 import axios from "axios";
-    
+
 
 export default function Myproduct({name, _id, images, description, price}) {
     const [currentIndex, setCurrentIndex] = useState(0);
