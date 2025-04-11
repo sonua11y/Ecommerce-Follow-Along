@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Nav from "../components/nav";
 import { IoAdd, IoRemove } from "react-icons/io5";
-const email = "dips@gmail.com"
+import { useSelector } from "react-redux";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -11,6 +11,8 @@ export default function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
+
+  const email = useSelector((state) => state.user.email);
 
   useEffect(() => {
     const fetchProduct = async () => {

@@ -892,3 +892,49 @@ This milestone helped me understand the core idea of global state and how Redux 
 ---
 
 Let me know if you’d like a version with code examples using `useSelector` and `useDispatch` next!
+
+
+Absolutely! Here’s your updated README with a more personal and engaging tone using **"I did"** throughout:
+
+---
+
+## **🌟 Milestone 32: Going Global with Redux! 🌍** ##
+
+Welcome to **Milestone 32** — a major step forward in making my app smarter and more connected using **Redux** for global state management. Let’s dive into what I did! 💪
+
+---
+
+## 🚀 What I Did
+
+In this milestone, I:
+
+- Used **Redux** to store the **user’s email globally**
+- Accessed the stored email across multiple pages
+- Learned how to use **`dispatch`** to update state and **`useSelector`** to retrieve it  
+- Took a big leap in mastering global state management in React
+
+---
+
+## 🛠️ How I Did It
+
+### 1️⃣ Stored the Email from Login Page
+
+
+### 2️⃣ Accessed the Email Anywhere
+
+
+## 💡 What I Learned
+
+By doing this, I understood:
+
+- How to avoid prop drilling
+- How Redux helps in managing data across the app
+- The value of a centralized state for a seamless user experience
+
+---
+
+## 🎉 Mission Accomplished!
+
+With Milestone 32 completed, I’ve added another powerful tool to my React toolkit. Managing global state with Redux? ✅ Done and dusted!
+
+---

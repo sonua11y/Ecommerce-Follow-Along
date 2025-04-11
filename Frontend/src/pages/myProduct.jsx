@@ -2,12 +2,15 @@
 import React, {useEffect, useState} from "react";
 import Myproduct from "../components/myProduct";
 import Nav from "../components/nav";
+import { useSelector } from "react-redux";
 
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true); //for loading state
     const [error, setError] = useState(null); // for error handling
-    const email = "dips@gmail.com";
+
+    const email = useSelector((state) => state.user.email);
+
 useEffect(() => {
     fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`).then((res) => {
         if(!res.ok) {
