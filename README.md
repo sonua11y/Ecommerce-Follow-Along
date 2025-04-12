@@ -938,3 +938,41 @@ By doing this, I understood:
 With Milestone 32 completed, I’ve added another powerful tool to my React toolkit. Managing global state with Redux? ✅ Done and dusted!
 
 ---
+
+
+Here’s your README section for **Milestone 33** written in the same engaging and informative format:
+
+---
+
+## **Milestone 33: Creating and Storing JWT Tokens Securely** ##  
+🔐 JWT Authentication with Cookies  
+
+🌟 **Overview**  
+
+This milestone introduces the core of secure user authentication—generating JWT tokens and storing them in cookies. You'll learn how to safely manage user sessions by embedding tokens in HTTP-only cookies after a successful login.
+
+✨ **Features**  
+
+🔐 Generate a JWT token using user email and ID.  
+⏳ Set an expiration time using the `maxAge` property.  
+🍪 Store the token securely in a browser cookie.  
+🛡️ Enables secure user authentication for future requests.
+
+📝 **Implementation Steps**  
+
+📦 **Install JWT Package**  
+Use NPM to install `jsonwebtoken` for creating and signing tokens.  
+
+🖊 **Create a JWT Token**  
+Utilize the `sign` method to generate a token with user details (email and ID).  
+
+⏰ **Set Expiration**  
+Define token lifespan by setting `maxAge` during token creation.  
+
+📬 **Send Token in Cookie**  
+Use `res.cookie()` to embed the JWT token in an HTTP-only cookie for secure storage in the browser.  
+
+🚀 **Next Steps**  
+These foundational steps set the stage for building protected routes and user-specific features using the stored token for authentication.
+
+---
