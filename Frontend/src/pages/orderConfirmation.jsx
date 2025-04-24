@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import Nav from "../components/nav";
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from '../axiosConfig';
 
 import {PayPalScriptProvider, PayPalButtons} from "@paypal/react-paypal-js";
 
@@ -42,7 +42,7 @@ const OrderConfirmation = () => {
                 setSelectedAddress(address);
 
                 // Fetch cart products from /cartproducts endpoint
-                const cartResponse = await axios.get('http://localhost:8000/api/v2/product/cartproducts', {
+                const cartResponse = await axios.get('/api/v2/product/cartproducts', {
                     params: { email: email },
                 });
 

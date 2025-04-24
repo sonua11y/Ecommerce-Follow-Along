@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../axiosConfig";
 import Nav from "../components/nav";
 import { IoAdd, IoRemove } from "react-icons/io5";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v2/product/product/${id}`);
+        const response = await axios.get(`/api/v2/product/product/${id}`);
         console.log("Fetched Product: ", response.data.product);
         setProduct(response.data.product);
       } catch (err) {
@@ -36,7 +36,7 @@ export default function ProductDetails() {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   
     try{
-      const response = await axios.post("http://localhost:8000/api/v2/product/cart",
+      const response = await axios.post("/api/v2/product/cart",
         {
           userId: email,
           productId: id,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../axiosConfig";
 
 const CreateProduct = () => {
     const { id } = useParams();
@@ -76,7 +76,7 @@ const CreateProduct = () => {
         try {
             if (isEdit) {
                 const response = await axios.put(
-                    `http://localhost:8000/api/v2/product/update-product/${id}`,
+                    `/api/v2/product/update-product/${id}`,
                     formData,
                     {
                         headers: {
@@ -91,7 +91,7 @@ const CreateProduct = () => {
                 }
             } else {
                 const response = await axios.post(
-                    "http://localhost:8000/api/v2/product/create-product",
+                    "/api/v2/product/create-product",
                     formData,
                     {
                         headers: {

@@ -944,35 +944,40 @@ Here’s your README section for **Milestone 33** written in the same engaging a
 
 ---
 
-## **Milestone 33: Creating and Storing JWT Tokens Securely** ##  
-🔐 JWT Authentication with Cookies  
+Sure! Here's your updated README section for **Milestone 34**, matching the style of Milestone 33:
+
+---
+
+## **Milestone 34: Validating JWT Tokens from Cookies** ##
+🛡️ JWT Token Validation for Protected Routes  
 
 🌟 **Overview**  
 
-This milestone introduces the core of secure user authentication—generating JWT tokens and storing them in cookies. You'll learn how to safely manage user sessions by embedding tokens in HTTP-only cookies after a successful login.
+This milestone focuses on securing your application by validating the JWT tokens stored in cookies. You’ll ensure only authenticated users can access certain pages, forming the backbone of protected routes and user-based access control.
 
 ✨ **Features**  
 
-🔐 Generate a JWT token using user email and ID.  
-⏳ Set an expiration time using the `maxAge` property.  
-🍪 Store the token securely in a browser cookie.  
-🛡️ Enables secure user authentication for future requests.
+🍪 Extract JWT token from the browser cookie.  
+🔍 Send the token to the backend for validation.  
+✅ Middleware checks token authenticity and validity.  
+🚫 Prevents access to routes without proper authentication.  
 
 📝 **Implementation Steps**  
 
-📦 **Install JWT Package**  
-Use NPM to install `jsonwebtoken` for creating and signing tokens.  
+🔍 **Get Token from Cookie**  
 
-🖊 **Create a JWT Token**  
-Utilize the `sign` method to generate a token with user details (email and ID).  
+📨 **Send Token to Backend**  
 
-⏰ **Set Expiration**  
-Define token lifespan by setting `maxAge` during token creation.  
+🧠 **Create JWT Middleware**  
 
-📬 **Send Token in Cookie**  
-Use `res.cookie()` to embed the JWT token in an HTTP-only cookie for secure storage in the browser.  
+
+🚫 **Redirect Unauthorized Users**  
+If token verification fails, redirect the user to the login page or return a 401 Unauthorized response.
 
 🚀 **Next Steps**  
-These foundational steps set the stage for building protected routes and user-specific features using the stored token for authentication.
+With token validation in place, you’re now ready to implement full session management and user-specific pages with robust access control.
 
 ---
+
+
+

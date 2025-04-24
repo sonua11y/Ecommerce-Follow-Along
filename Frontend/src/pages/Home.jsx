@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "../components/products";
 import Nav from "../components/nav";
+import axios from "../axiosConfig";
 
 export default function Home() {
     const [products, setProducts] = useState([]); // Fixed variable name consistency
@@ -9,20 +10,9 @@ export default function Home() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/v2/product/get-products")
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`HTTP error! status: ${res.status}`);
-                }
-                return res.json();
-            })
+        axios.get("/api/v2/product/get-products")
             .then((data) => {
-                console.log("API response:", data); // Debugging step
-                if (data && Array.isArray(data.products)) {
-                    setProducts(data.products);
-                } else {
-                    setProducts([]); // Default to empty array if data structure is unexpected
-                }
+                setProducts(data.products);
                 setLoading(false);
             })
             .catch((err) => {

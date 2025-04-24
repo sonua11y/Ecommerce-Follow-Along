@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Nav from "../components/nav";
 import { useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
+import axios from "../axiosConfig";
 
 const SelectAddress = () => {
     const [addresses, setAddresses] = useState([]);
@@ -12,42 +13,24 @@ const SelectAddress = () => {
     const userEmail = useSelector((state) => state.user.email);
 
     useEffect(() => {
-        const fetchAddresses = async () => {
-            try {
-                const response = await fetch('http://localhost:8000/api/v2/user/addresses' , {
+        if (!userEmail) return;
+        axios.get('/api/v2/user/addresses' , {
                     params: {email: userEmail},
-                });
-
-
-                if(!response.ok) {
-                    if(response.status === 404) {
-                        throw new Error('User not found');
-                    } else if(response.status === 400) {
-                        throw new Error('Bad request. Email parameter is missing')
-                    } else {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                }
-
-                const data = await response.json();
-
-                if(data && Array.isArray(data.addresses)) {
-                    setAddresses(data.addresses)
-                }
-                else {
-                    setAddresses([]);
-                    console.warn('Unexpected response structure:', data);
-                }
-            } catch(err) {
-                console.error('Error fetching the address:', err);
-                setError(err.message || 'An unexpected error occurred');
-            } finally {
-                setLoading(false);
+                })
+        .then((res) => {
+            if (res.data && Array.isArray(res.data.addresses)) {
+                setAddresses(res.data.addresses);
+            } else {
+                setAddresses([]);
             }
-        };
-
-        fetchAddresses();
+        })
+        .catch((err) => {
+            console.error("Error fetching addresses:", err)
+            setError(err.response?.data?.message || err.message || "An unexpected error occurred");
+        })
+        .finally(() => setLoading(false));
     }, [userEmail]);
+
 
     const handleSelectAddress = (addressId) => {
         navigate('/order-confirmation', {state: {addressId, email: userEmail}});

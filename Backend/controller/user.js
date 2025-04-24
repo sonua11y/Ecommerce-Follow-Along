@@ -114,7 +114,7 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
         });
 }));
 
-router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
+router.get("/Profile", isAuthenticatedUser, catchAsyncErrors(async(req,res,next) => {
     const {email} = req.query;
 
     if(!email) {
@@ -138,7 +138,7 @@ router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
     });
 }))
 
-router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
+router.post("/add-address", isAuthenticatedUser, catchAsyncErrors(async (req,res,next) => {
 
     console.log("Received address data:", req.body);
     const {country, city, address1, address2, zipCode, addressType, email} = req.body;
@@ -167,7 +167,7 @@ router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
     });
 }))
 
-router.get("/addresses", catchAsyncErrors(async(req, res, next) => {
+router.get("/addresses", isAuthenticatedUser, catchAsyncErrors(async(req, res, next) => {
     console.log("Fetching addresses for:", req.query.email);
 
     const {email} = req.query;

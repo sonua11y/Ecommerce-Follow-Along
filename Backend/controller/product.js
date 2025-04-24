@@ -6,6 +6,8 @@ const {pupload} = require('../multer')
 const path = require('path');
 const { model } = require('mongoose');
 const mongoose = require('mongoose')
+const {isAuthenticatedUser} = require("../middleware/auth");
+
 const validateProductsData = (data) => {
     const errors = [];
 
@@ -20,7 +22,7 @@ const validateProductsData = (data) => {
 };
 
 // @route POST /api/products
-router.post("/create-product", pupload.array("images"), async (req, res) => {
+router.post("/create-product", isAuthenticatedUser, pupload.array("images"), async (req, res) => {
     const { name, description, category, price, stock, email, tags } = req.body;
     const images = req.files ? req.files.map((file) => `/products/${file.filename}`) : [];
 
@@ -53,7 +55,7 @@ router.post("/create-product", pupload.array("images"), async (req, res) => {
     }
 });
 
-router.get("/get-products", async (req, res) => {
+router.get("/get-products", isAuthenticatedUser, async (req, res) => {
     try {
         const products = await Product.find();
         res.status(200).json({ products });
@@ -63,7 +65,7 @@ router.get("/get-products", async (req, res) => {
     }
 });
 
-router.get("/my-products", async (req, res) => {
+router.get("/my-products", isAuthenticatedUser, async (req, res) => {
     const { email } = req.query;
     try {
         const products = await Product.find({ email });
@@ -74,7 +76,7 @@ router.get("/my-products", async (req, res) => {
     }
 });
 
-router.get("/product/:id", async (req, res) => {
+router.get("/product/:id",isAuthenticatedUser, async (req, res) => {
     const { id } = req.params;
     try {
         const product = await Product.findById(id);
@@ -88,7 +90,7 @@ router.get("/product/:id", async (req, res) => {
     }
 });
 
-router.put("/update-product/:id", pupload.array("images", 10), async (req, res) => {
+router.put("/update-product/:id", isAuthenticatedUser, pupload.array("images", 10), async (req, res) => {
     const { id } = req.params;
     const { name, description, category, price, stock, email, tags } = req.body;
 
@@ -119,7 +121,7 @@ router.put("/update-product/:id", pupload.array("images", 10), async (req, res) 
     }
 });
 
-router.delete("/delete-product/:id", async (req, res) => {
+router.delete("/delete-product/:id", isAuthenticatedUser, async (req, res) => {
     const { id } = req.params;
 
     try {
@@ -135,7 +137,7 @@ router.delete("/delete-product/:id", async (req, res) => {
     }
 });
 
-router.post("/cart", async (req, res) => {
+router.post("/cart", isAuthenticatedUser, async (req, res) => {
     try {
         const { userId, productId, quantity } = req.body;
         const email = userId;
@@ -167,7 +169,7 @@ router.post("/cart", async (req, res) => {
     }
 });
 
-router.get('/cartproducts', async (req, res) => {
+router.get('/cartproducts', isAuthenticatedUser, async (req, res) => {
     try {
         const { email } = req.query;
         if (!email) {
@@ -190,7 +192,7 @@ router.get('/cartproducts', async (req, res) => {
     }
 });
 
-router.put("/cartproduct/quantity", async (req, res) => {
+router.put("/cartproduct/quantity", isAuthenticatedUser, async (req, res) => {
     const { email, productId, quantity } = req.body;
 
     if (!email || !productId || quantity === undefined) {
