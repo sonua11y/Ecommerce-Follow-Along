@@ -940,14 +940,6 @@ With Milestone 32 completed, I’ve added another powerful tool to my React tool
 ---
 
 
-Here’s your README section for **Milestone 33** written in the same engaging and informative format:
-
----
-
-Sure! Here's your updated README section for **Milestone 34**, matching the style of Milestone 33:
-
----
-
 ## **Milestone 34: Validating JWT Tokens from Cookies** ##
 🛡️ JWT Token Validation for Protected Routes  
 
