@@ -940,6 +940,31 @@ With Milestone 32 completed, I’ve added another powerful tool to my React tool
 ---
 
 
+## 🌟 **Milestone 33: Creating and Storing JWT in Cookies** ##
+
+### 🎯 Learning Goals
+By the end of this milestone, I learned how to:
+
+- Generate a **JWT (JSON Web Token)** using the `jsonwebtoken` package.
+- Store the JWT securely inside a **cookie**.
+- Set an expiration time using the `maxAge` option.
+- Send the cookie in the HTTP response to be stored in the browser.
+
+### 📝 Steps Followed
+
+1. **Installed `jsonwebtoken`**  
+
+2. **Created a JWT Token**  
+
+
+3. **Set Expiration Time**  
+
+4. **Stored the Token in Cookie**  
+
+✅ With this milestone, I now understand how authentication systems can securely manage user sessions using JWTs and cookies.
+
+
+
 ## **Milestone 34: Validating JWT Tokens from Cookies** ##
 🛡️ JWT Token Validation for Protected Routes  
 
