@@ -2,7 +2,6 @@ const User = require("../model/user");
 const express = require("express");
 const path = require("path")
 const fs = require("fs");
-
 const router = express.Router();
 const {upload} = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
@@ -13,7 +12,6 @@ const { default: mongoose } = require("mongoose");
 const { type } = require("os");
 const { count } = require("console");
 require("dotenv").config();
-const jwt = require("jsonwebtoken");
 const {isAuthenticatedUser} = require('../middleware/auth');
 
 // create user

@@ -1,15 +1,12 @@
 const express = require("express");
 const app = express();
-const user = require("./controller/user");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const errorHandler = require("./middleware/error");
-const product = require("./controller/product");
-const orders = require('./controller/order');
 const path = require('path');
 
 const cookieParser = require("cookie-parser");
-const path = require("path");
+
 
 // Built-in middleware for parsing JSON
 app.use(express.json());
