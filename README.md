@@ -997,4 +997,7 @@ With token validation in place, you’re now ready to implement full session man
 ---
 
 
+## **Milestone 35: Deployment** ##
+Backend Deployment Link: https://ecom-codealong.onrender.com/
 
+Frontend Deployment Link: https://ecom-code-along-55px.vercel.app/
